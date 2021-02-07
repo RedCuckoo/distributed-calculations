@@ -1,8 +1,8 @@
-package task2;
+package com.momotenko.lab1.task2;
+
+import com.momotenko.lab1.CustomRunnable;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -27,7 +27,7 @@ public class GraphicalInterface {
     Semaphore semaphore = new Semaphore();
 
     public GraphicalInterface() {
-        frame = new JFrame("Lab 1");
+        frame = new JFrame("Lab 1 | B");
 
         buttonStart1 = new JButton("Start1");
         buttonStart2 = new JButton("Start2");
@@ -80,20 +80,7 @@ public class GraphicalInterface {
 
     private void onButtonStart1Click() {
         if (semaphore.setTaken()){
-            thread1 = new Thread(()->{
-                while(!Thread.currentThread().isInterrupted()){
-                    synchronized (slider){
-                        slider.setValue(10);
-
-                        try {
-                            Thread.sleep(10);
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                        }
-                        Thread.yield();
-                    }
-                }
-            });
+            thread1 = new Thread(new CustomRunnable(slider,10,null));
             thread1.setPriority(1);
             thread1.setDaemon(true);
             thread1.start();
@@ -108,20 +95,7 @@ public class GraphicalInterface {
 
     private void onButtonStart2Click() {
         if (semaphore.setTaken()){
-            thread2 = new Thread(()->{
-                while(!Thread.currentThread().isInterrupted()){
-                    synchronized (slider){
-                        slider.setValue(90);
-
-                        try {
-                            Thread.sleep(10);
-                        } catch (InterruptedException e) {
-                            Thread.currentThread().interrupt();
-                        }
-                        Thread.yield();
-                    }
-                }
-            });
+            thread2 = new Thread(new CustomRunnable(slider,90,null));
             thread2.setPriority(10);
             thread1.setDaemon(false);
             thread2.start();

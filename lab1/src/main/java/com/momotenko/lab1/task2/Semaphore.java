@@ -1,4 +1,4 @@
-package task2;
+package com.momotenko.lab1.task2;
 
 public class Semaphore {
     private int semaphore = 0;

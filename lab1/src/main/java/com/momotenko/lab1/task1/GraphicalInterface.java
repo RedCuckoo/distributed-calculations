@@ -1,9 +1,13 @@
-package task1;
+package com.momotenko.lab1.task1;
+
+import com.momotenko.lab1.CustomRunnable;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GraphicalInterface {
     JFrame frame;
@@ -21,11 +25,8 @@ public class GraphicalInterface {
 
     boolean started = false;
 
-    int counter1 = 0;
-    int counter2 = 0;
-
     public GraphicalInterface() {
-        frame = new JFrame("Lab 1");
+        frame = new JFrame("Lab 1 | A");
         button = new JButton("Start");
 
         button.addActionListener(e -> {
@@ -83,38 +84,17 @@ public class GraphicalInterface {
         frame.setSize(400, 400);
         frame.setVisible(true);
 
-        thread1 = new Thread(() -> {
-            while (true) {
-                synchronized (slider) {
-                    slider.setValue(10);
+        thread1 = new Thread(new CustomRunnable(slider,10,label1));
+        thread2 = new Thread(new CustomRunnable(slider,90,label2));
+        thread1.setDaemon(true);
+        thread2.setDaemon(true);
+        thread1.setPriority(1);
+        thread2.setPriority(1);
 
-                    label1.setText("10 captured # of time: " + ++counter1);
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    Thread.yield();
-                }
-            }
-
-        });
-
-        thread2 = new Thread(() -> {
-            while (true) {
-                synchronized (slider) {
-                    slider.setValue(90);
-
-
-                    label2.setText("90 captured # of time: " + ++counter2);
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    Thread.yield();
-                }
-
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
             }
         });
     }
