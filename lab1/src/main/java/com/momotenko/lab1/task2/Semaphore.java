@@ -3,11 +3,11 @@ package com.momotenko.lab1.task2;
 public class Semaphore {
     private int semaphore = 0;
 
-    public boolean isTaken() {
+    public synchronized boolean isTaken() {
         return (semaphore == 1);
     }
 
-    public boolean setTaken() {
+    public synchronized boolean setTaken() {
         if (isTaken()){
             return false;
         }else{
@@ -17,7 +17,7 @@ public class Semaphore {
         return true;
     }
 
-    public void setFree(){
+    public synchronized void setFree(){
         semaphore = 0;
     }
 }
