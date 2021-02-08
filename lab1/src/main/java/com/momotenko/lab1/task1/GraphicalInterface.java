@@ -27,6 +27,7 @@ public class GraphicalInterface {
 
     public GraphicalInterface() {
         frame = new JFrame("Lab 1 | A");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         button = new JButton("Start");
 
         button.addActionListener(e -> {
@@ -90,13 +91,6 @@ public class GraphicalInterface {
         thread2.setDaemon(true);
         thread1.setPriority(1);
         thread2.setPriority(1);
-
-        frame.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
     }
 
     private void onButtonClick() {

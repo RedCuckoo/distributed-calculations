@@ -28,6 +28,7 @@ public class GraphicalInterface {
 
     public GraphicalInterface() {
         frame = new JFrame("Lab 1 | B");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         buttonStart1 = new JButton("Start1");
         buttonStart2 = new JButton("Start2");
@@ -69,13 +70,6 @@ public class GraphicalInterface {
         frame.add(panel, BorderLayout.CENTER);
         frame.setSize(400, 400);
         frame.setVisible(true);
-
-        frame.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
     }
 
     private void onButtonStart1Click() {
