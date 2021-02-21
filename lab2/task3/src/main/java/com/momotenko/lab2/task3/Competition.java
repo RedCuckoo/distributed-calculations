@@ -21,7 +21,7 @@ public class Competition extends RecursiveTask {
     protected Integer compute() {
         if (endIndex - startIndex == 1){
             return compete(startIndex,endIndex);
-        }else if (endIndex == startIndex){
+        }else if (endIndex.equals(startIndex)){
             return startIndex;
         }
 
