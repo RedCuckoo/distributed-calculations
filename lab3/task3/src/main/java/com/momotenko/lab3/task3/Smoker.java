@@ -1,8 +1,5 @@
 package com.momotenko.lab3.task3;
 
-import java.util.HashSet;
-import java.util.Map;
-
 public class Smoker extends Thread {
     final SmokingAccessories smokingAccessory;
     final Mediator mutex;
