@@ -19,7 +19,7 @@ public class Controller {
     private static final int BUFFER_SIZE = 64;
 
     public static void run() throws IOException {
-        Path path = Paths.get("C:/Test/temp.txt");
+        Path path = Paths.get("out.txt");
         RandomAccessFile file = new RandomAccessFile(path.toFile(),"rw");
         FileChannel fileChannel = file.getChannel();
         fileChannel.truncate(0);

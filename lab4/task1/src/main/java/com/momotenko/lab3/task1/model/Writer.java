@@ -61,6 +61,7 @@ public class Writer extends ReaderWriterAbstract{
 
                         System.out.println("Deleted successfully");
                         printLocked("Writer", false);
+                        fileLock.release();
                         lock.writeLock().unlock();
                         return;
                     }
