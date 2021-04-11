@@ -7,8 +7,8 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 public class Main {
-    private int ARRAY_SIZE = 3;
-    private int MAX_NUMBER = 3;
+    private int ARRAY_SIZE = 5;
+    private int MAX_NUMBER = 4;
     private List<ArrayThread> threads;
     private CyclicBarrier barrier;
     private boolean exit = false;
