@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <day year="2021" month="6" day="12">
+        <event hours="14" minutes="0" description="Do labs"/>
+        <event hours="16" minutes="0" description="Do labs"/>
+        <event hours="18" minutes="0" description="Do labs"/>
+    </day>
+    <day year="2021" month="6" day="13">
+        <event hours="10" minutes="0" description="Do labs"/>
+        <event hours="13" minutes="0" description="Do labs"/>
+        <event hours="15" minutes="0" description="Do labs"/>
+    </day>
+    <day year="2021" month="6" day="14">
+        <event hours="12" minutes="0" description="Do labs"/>
+        <event hours="16" minutes="0" description="Do labs"/>
+        <event hours="18" minutes="0" description="Do labs"/>
+    </day>
+</map>
