@@ -50,6 +50,10 @@ public class Notebook {
         return false;
     }
 
+    public List<Day> getDays() {
+        return days;
+    }
+
     @Override
     public String toString() {
         return "Notebook{" +

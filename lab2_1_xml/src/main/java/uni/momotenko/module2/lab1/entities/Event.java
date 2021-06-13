@@ -14,6 +14,18 @@ public class Event {
         this.description = description;
     }
 
+    public Integer getHours() {
+        return hours;
+    }
+
+    public Integer getMinutes() {
+        return minutes;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
