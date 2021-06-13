@@ -50,4 +50,14 @@ public class Day {
     public int hashCode() {
         return Objects.hash(year, month, day, events);
     }
+
+    @Override
+    public String toString() {
+        return "Day{" +
+                "year=" + year +
+                ", month=" + month +
+                ", day=" + day +
+                ", events=" + events +
+                '}';
+    }
 }

@@ -50,4 +50,10 @@ public class Notebook {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return "Notebook{" +
+                "days=" + days +
+                '}';
+    }
 }

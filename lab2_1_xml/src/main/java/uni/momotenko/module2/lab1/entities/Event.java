@@ -26,4 +26,13 @@ public class Event {
     public int hashCode() {
         return Objects.hash(hours, minutes, description);
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "hours=" + hours +
+                ", minutes=" + minutes +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
