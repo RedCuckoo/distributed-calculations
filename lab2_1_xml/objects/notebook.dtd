@@ -1,4 +1,4 @@
-<!ELEMENT map (day+)>
+<!ELEMENT notebook (day+)>
         <!ELEMENT day (event+)>
         <!ELEMENT event (#PCDATA)>
         <!ATTLIST day year CDATA #REQUIRED>

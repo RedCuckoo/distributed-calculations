@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "map.dtd">
-<map>
+<!DOCTYPE notebook SYSTEM "notebook.dtd">
+<notebook>
     <day year="2021" month="6" day="12">
         <event hours="14" minutes="0" description="Do labs"/>
         <event hours="16" minutes="0" description="Do labs"/>
@@ -16,4 +16,4 @@
         <event hours="16" minutes="0" description="Do labs"/>
         <event hours="18" minutes="0" description="Do labs"/>
     </day>
-</map>
+</notebook>
